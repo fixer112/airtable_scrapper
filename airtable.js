@@ -1,6 +1,6 @@
 //This code used on sample page https://airtable.com/app5bMnq5s2ath7Ze/shrfjSEjp0s4VxgG7/tbleNYbxcFbee5DLP
 
-//Check s1.png and s2.png for screenshot
+//Check screenshots
 let data = [];
 function callback(mutations) {
   mutations.forEach(mutation => {
