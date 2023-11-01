@@ -1,27 +1,32 @@
+//This code used on sample page https://airtable.com/app5bMnq5s2ath7Ze/shrfjSEjp0s4VxgG7/tbleNYbxcFbee5DLP
+
+//Check s1.png and s2.png for screenshot
 let data = [];
 function callback(mutations) {
   mutations.forEach(mutation => {
-    // Array.from(temp1.children).forEach((item) => {
-    //   let id = item.children[1].getAttribute("data-rowindex")//getAttribute("data-rowid");
-    //   let n = id;
 
-    //   if (!data.includes(n)) {
-    //     data[n] = [];
+    //Extract Name 
+    Array.from(temp1.children).forEach((item) => {
+      let id = item.children[1].getAttribute("data-rowindex")//getAttribute("data-rowid");
+      let n = id;
 
-    //   }
+      if (!data.includes(n)) {
+        data[n] = [];
 
-
-    //   data[n]["name"] =
-    //     item.children[1].innerText;
-
-    //   //console.log(item.children[1].innerText)
-
-    //   // }
-
-    // });
+      }
 
 
+      data[n]["name"] =
+        item.children[1].innerText;
 
+      //console.log(item.children[1].innerText)
+
+      // }
+
+    });
+
+
+    //Extract other column
     Array.from(temp1.children).forEach((item) => {
 
       var id = item.children[0].getAttribute("data-rowindex")//getAttribute("data-rowid");
@@ -55,15 +60,18 @@ const observer = new MutationObserver(callback);
 
 observer.observe(document, { subtree: true, attributes: true });
 
-Object.entries(data)
 
-let all = "";
-((data)).forEach((e) => {
-  n = e["name"]
-  d = (e["data"]).join(",")
-  all += n + "," + d + "\n"
-  //console.log(n + "," + d)
-})
+//use copy(data) to copy data and save as json file i.e name.json, data.json, data2.json
+
+// Object.entries(data)
+
+// let all = "";
+// ((data)).forEach((e) => {
+//   n = e["name"]
+//   d = (e["data"]).join(",")
+//   all += n + "," + d + "\n"
+//   //console.log(n + "," + d)
+// })
 
 
 
